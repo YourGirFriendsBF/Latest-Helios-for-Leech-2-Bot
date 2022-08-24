@@ -54,7 +54,7 @@ def start(update, context):
     buttons.buildbutton("Report group-2", "https://t.me/MirrorSociety")
     buttons.buildbutton("Updates Channel", "https://t.me/DhruvMirrorUpdates")
     buttons.buildbutton("Owner", "https://t.me/dhruv444")
-    reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
+    reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 This bot can mirror all your links to Google Drive or to telegram!
