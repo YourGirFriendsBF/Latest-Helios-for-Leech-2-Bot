@@ -11,7 +11,7 @@ def getCommand(name: str, command: str):
 
 class _BotCommands:
     def __init__(self):
-        self.StartCommand = getCommand(f'start')
+        self.StartCommand = getCommand(f'START_CMD', f'start')
         self.MirrorCommand = getCommand('MIRROR_CMD', f'mirror{CMD_INDEX}')
         self.UnzipMirrorCommand = getCommand('UNZIP_CMD', f'unzipmirror{CMD_INDEX}')
         self.ZipMirrorCommand = getCommand('ZIP_CMD', f'zipmirror{CMD_INDEX}')
@@ -33,10 +33,10 @@ class _BotCommands:
         self.DeleteCommand = getCommand('DELETE_CMD', f'del{CMD_INDEX}')
         self.CancelMirror = getCommand('CANCEL_CMD', f'cancel{CMD_INDEX}')
         self.CancelAllCommand = getCommand('CANCEL_ALL_CMD', f'cancelall{CMD_INDEX}')
-        self.ListCommand = getCommand('list')
+        self.ListCommand = getCommand('LIST_CMD', f'list')
         self.SearchCommand = getCommand('SEARCH_CMD', f'search{CMD_INDEX}')
-        self.StatusCommand = getCommand('status')
-        self.AuthorizedUsersCommand = f'users{CMD_INDEX}'
+        self.StatusCommand = getCommand('STATUS_CMD', f'status')
+        self.AuthorizedUsersCommand = f'users'
         self.AuthorizeCommand = f'authorize'
         self.UnAuthorizeCommand = f'unauthorize'
         self.AddSudoCommand = f'addsudo'
