@@ -11,7 +11,7 @@ def getCommand(name: str, command: str):
 
 class _BotCommands:
     def __init__(self):
-        self.StartCommand = getCommand(f'START_CMD', f'start{CMD_INDEX}')
+        self.StartCommand = getCommand(f'start')
         self.MirrorCommand = getCommand('MIRROR_CMD', f'mirror{CMD_INDEX}')
         self.UnzipMirrorCommand = getCommand('UNZIP_CMD', f'unzipmirror{CMD_INDEX}')
         self.ZipMirrorCommand = getCommand('ZIP_CMD', f'zipmirror{CMD_INDEX}')
@@ -33,17 +33,17 @@ class _BotCommands:
         self.DeleteCommand = getCommand('DELETE_CMD', f'del{CMD_INDEX}')
         self.CancelMirror = getCommand('CANCEL_CMD', f'cancel{CMD_INDEX}')
         self.CancelAllCommand = getCommand('CANCEL_ALL_CMD', f'cancelall{CMD_INDEX}')
-        self.ListCommand = getCommand('LIST_CMD', f'list{CMD_INDEX}')
+        self.ListCommand = getCommand('list')
         self.SearchCommand = getCommand('SEARCH_CMD', f'search{CMD_INDEX}')
-        self.StatusCommand = getCommand('STATUS_CMD', f'status{CMD_INDEX}')
+        self.StatusCommand = getCommand('status')
         self.AuthorizedUsersCommand = f'users{CMD_INDEX}'
-        self.AuthorizeCommand = f'authorize{CMD_INDEX}'
-        self.UnAuthorizeCommand = f'unauthorize{CMD_INDEX}'
-        self.AddSudoCommand = f'addsudo{CMD_INDEX}'
-        self.RmSudoCommand = f'rmsudo{CMD_INDEX}'
-        self.PingCommand = f'ping{CMD_INDEX}'
+        self.AuthorizeCommand = f'authorize'
+        self.UnAuthorizeCommand = f'unauthorize'
+        self.AddSudoCommand = f'addsudo'
+        self.RmSudoCommand = f'rmsudo'
+        self.PingCommand = f'ping'
         self.RestartCommand = f'restart{CMD_INDEX}'
-        self.StatsCommand = f'stats{CMD_INDEX}'
+        self.StatsCommand = f'stats'
         self.HelpCommand = f'help{CMD_INDEX}'
         self.LogCommand = f'log{CMD_INDEX}'
         self.ShellCommand = f'shell{CMD_INDEX}'
