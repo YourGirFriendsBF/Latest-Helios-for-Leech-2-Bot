@@ -37,15 +37,19 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b><i><u>Only For You!</u></i></b>\n\n'\
-            f'<b>Updated:</b> <code>{last_commit}</code>\n'\
-            f'<b>I am Working For:</b> <code>{currentTime}</code>\n'\
-            f'<b>Total Disk:</b> <code>{total}</code> [{disk}% In use]\n'\
-            f'<b>Used:</b> <code>{used}</code> | <b>Free:</b> <code>{free}</code>\n'\
-            f'<b>Total Uptime:</b> <code>{sent}</code> | <b>T-Dn:</b> <code>{recv}</code>\n'\
-            f'<b>CPU Usage:</b> <code>{cpuUsage}</code>% | <b>RAM Usage:</b> <code>{mem_p}%</code>\n'
-    reply_message = sendMessage(stats, context.bot, update.message)
-    Thread(target=auto_delete_message, args=(context.bot, update.message, reply_message)).start()
+    stats = f'<b>Commit Date:</b> {last_commit}\n\n'\
+            f'<b>Bot Uptime:</b> {currentTime}\n\n'\
+            f'<b>Total Disk Space:</b> {total}\n'\
+            f'<b>Used:</b> {used} | <b>Free:</b> {free}\n\n'\
+            f'<b>Up:</b> {sent} | '\
+            f'<b>Down:</b> {recv}\n\n'\
+            f'<b>CPU:</b> {cpuUsage}% | '\
+            f'<b>RAM:</b> {mem_p}% | '\
+            f'<b>DISK:</b> {disk}%\n\n'\
+            f'<b>Total Memory:</b> {mem_t}\n'\
+            f'<b>Free:</b> {mem_a} | '\
+            f'<b>Used:</b> {mem_u}\n\n'
+    sendMessage(stats, context.bot, update.message)
 
 
 def start(update, context):
