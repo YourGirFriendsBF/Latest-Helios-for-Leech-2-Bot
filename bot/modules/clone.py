@@ -61,7 +61,7 @@ def _clone(message, bot):
     is_appdrive = is_appdrive_link(link)
     is_gdtot = is_gdtot_link(link)
     if is_appdrive:
-        msg = sendMessage(f"Please wait while I'm Processing :\n\n <code>{link}</code>", bot, message)
+        msg = sendMessage(f"Please wait while I'm Processing :\n\n <code>{link}</code> \n\n <b>#Processing is in Progress</b>", bot, message)
         try:
             link = appdrive(link)
             deleteMessage(bot, msg)
@@ -70,7 +70,7 @@ def _clone(message, bot):
             return sendMessage(str(e), bot, message)
     if is_gdtot:
         try:
-            msg = sendMessage(f"Please wait while I'm Processing :\n\n <code>{link}</code>", bot, message)
+            msg = sendMessage(f"Please wait while I'm Processing :\n\n <code>{link}</code> \n\n <b>#Processing is in Progress</b>, bot, message)
             link = gdtot(link)
             deleteMessage(bot, msg)
         except DirectDownloadLinkException as e:
@@ -100,7 +100,7 @@ def _clone(message, bot):
             sleep(4)
             Thread(target=_clone, args=(nextmsg, bot)).start()
         if files <= 20:
-            msg = sendMessage(f"Almost There I'm Cloning:\n\n <code>{link}</code>", bot, message)
+            msg = sendMessage(f"Almost There I'm Cloning:\n\n <code>{link}</code> \n\n <b>#Cloning is in Progress</b>", bot, message)
             result, button = gd.clone(link)
             deleteMessage(bot, msg)
             if BOT_PM and FORCE_BOT_PM:
